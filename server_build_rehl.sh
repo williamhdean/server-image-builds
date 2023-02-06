@@ -33,6 +33,21 @@ sudo chown ec2-user:nginx /var/www/html -R
 echo "hello world" > index.html
 php -v >> index.html
 
-### composer create-project drupal/recommended-project:10.0.3 "install-dir"
+### from new /var/www/html/ directory
+### composer create-project drupal/recommended-project:10.0.3 .
+
+#### finish drupal ready steps
+# 
+sudo chown billy_cloude_consulting:nginx /var/www/html/web/sites/default/files -R
+sudo chmod 664 /var/www/html/web/sites/default/files -R
+
+sudo cp /var/www/html/web/sites/default/default.settings.php /var/www/html/web/sites/default/settings.php
+sudo chown billy_cloude_consulting:nginx /var/www/html/web/sites/default/settings.php
+sudo chmod 777 /var/www/html/web/sites/default/settings.php
+
+from /web directory
+
+semanage fcontext -a -t httpd_sys_content_t "../web(/.*)?"
+restorecon -R -v ../web
 
 ### mysql_secure_installation
