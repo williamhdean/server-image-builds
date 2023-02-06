@@ -1,7 +1,11 @@
 #!/bin/bash
 
 sudo yum update -y
-sudo yum install -y php php-cli php-xml php-gd php-pdo
+
+sudo yum -y module enable php:8.1
+
+sudo yum module install -y php:8.1/common
+# sudo yum install -y php php-cli php-xml php-gd php-pdo
 sudo yum install -y nginx
 sudo systemctl start nginx
 sudo systemctl enable nginx
