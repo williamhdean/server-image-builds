@@ -28,3 +28,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 sudo chown ec2-user:nginx /var/www/html -R
 echo "hello world" > index.html
 php -v >> index.html
+
+### composer create-project drupal/recommended-project:10.0.3 "install-dir"
+
+### mysql_secure_installation
