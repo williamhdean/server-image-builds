@@ -17,7 +17,7 @@ sudo systemctl enable mysql
 sudo yum -y module enable php:8.1
 
 sudo yum module install -y php:8.1/common
-# sudo yum install -y php php-cli php-xml php-gd php-pdo
+sudo yum install -y php-mysqlnd
 
 sudo systemctl start php-fpm
 sudo systemctl enable php-fpm
