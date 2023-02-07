@@ -45,7 +45,8 @@ sudo chown ec2-user:nginx /var/www/html -R
 # php -v >> index.html
 
 ### from new /var/www/html/ directory
-### composer create-project drupal/recommended-project:10.0.3 .
+### composer create-project drupal/recommended-project:10.0.3 PROJECTNAME
+
 
 #### finish drupal ready steps
 # 
