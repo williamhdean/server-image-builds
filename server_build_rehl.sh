@@ -13,11 +13,17 @@ sudo yum -y install MariaDB-server galera-4 MariaDB-client MariaDB-shared MariaD
 sudo systemctl start mysql
 sudo systemctl enable mysql
 
+sudo mysqladmin -u root password PASSWORD
+mysql -u root -p
+CREATE DATABASE database_name
+CREATE USER 'drupal'@'localhost' IDENTIFIED BY 'PASSWORD';
+GRANT ALL PRIVILEGES ON *.* TO 'drupal'@'localhost';
+
 
 sudo yum -y module enable php:8.1
 
 sudo yum module install -y php:8.1/common
-sudo yum install -y php-mysqlnd
+sudo yum install -y php-mysqlnd php-gd
 
 sudo systemctl start php-fpm
 sudo systemctl enable php-fpm
@@ -30,9 +36,8 @@ sudo php composer-setup.php --install-dir=/usr/local/bin --filename=composer
 
 
 
-sudo yum -y install vim
-sudo yum -y install git
-sudo yum -y install zsh
+sudo yum -y install vim git zsh
+
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 sudo chown ec2-user:nginx /var/www/html -R
