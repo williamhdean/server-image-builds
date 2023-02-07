@@ -59,6 +59,7 @@ sudo chmod 777 /var/www/html/web/sites/default/settings.php
 
 from /web directory
 
+dnf install policycoreutils-python-utils
 semanage fcontext -a -t httpd_sys_content_t "../web(/.*)?"
 restorecon -R -v ../web
 
