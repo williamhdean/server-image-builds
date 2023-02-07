@@ -23,7 +23,7 @@ GRANT ALL PRIVILEGES ON *.* TO 'drupal'@'localhost';
 sudo yum -y module enable php:8.1
 
 sudo yum module install -y php:8.1/common
-sudo yum install -y php-mysqlnd php-gd
+sudo yum install -y php-mysqlnd php-gd 	php-opcache
 
 sudo systemctl start php-fpm
 sudo systemctl enable php-fpm
